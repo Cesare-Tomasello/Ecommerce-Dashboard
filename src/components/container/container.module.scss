@@ -1,0 +1,18 @@
+@import "../../constants/variables.scss";
+
+.main {
+  height: calc(100vh - $header-height);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(231, 230, 230);
+  .sxColumn {
+    width: 500px;
+    height: 100%;
+    padding: 20px;
+  }
+  .dxColumn {
+    width: 100%;
+    height: 100%;
+  }
+}
