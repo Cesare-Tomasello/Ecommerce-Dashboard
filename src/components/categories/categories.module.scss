@@ -1,5 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .main {
   width: 100%;
-  background-color: lightskyblue;
   text-align: center;
+  overflow-y: scroll;
+  .title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    padding: 30px 0;
+    .image {
+      @media all and (max-width: 821px) {
+        width: 90%;
+      }
+      width: 600px;
+    }
+  }
 }
