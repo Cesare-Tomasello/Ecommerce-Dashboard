@@ -1,32 +1,40 @@
+import {
+  GrHomeRounded,
+  GrList,
+  GrRobot,
+  GrCreditCard,
+  GrUser,
+} from "react-icons/gr";
+
 export const navBarLinks = [
   {
     id: 1,
     label: "Home",
     route: "home",
-    icon: <span class="material-symbols-outlined">home</span>,
+    icon: <GrHomeRounded />,
   },
   {
     id: 2,
     label: "Categories",
     route: "categories",
-    icon: <span class="material-symbols-outlined">category</span>,
+    icon: <GrList />,
   },
   {
     id: 3,
     label: "Products",
     route: "products",
-    icon: <span class="material-symbols-outlined">inventory_2</span>,
+    icon: <GrRobot />,
   },
   {
     id: 4,
     label: "Orders",
     route: "orders",
-    icon: <span class="material-symbols-outlined">list_alt</span>,
+    icon: <GrCreditCard />,
   },
   {
     id: 5,
     label: "User",
     route: "user",
-    icon: <span class="material-symbols-outlined">person</span>,
+    icon: <GrUser />,
   },
 ];

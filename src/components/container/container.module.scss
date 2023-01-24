@@ -7,11 +7,16 @@
   justify-content: space-between;
   background-color: rgb(231, 230, 230);
   .sxColumn {
+    @media all and (max-width: 768px) {
+      width: 100px;
+    }
     width: 500px;
     height: 100%;
     padding: 20px;
   }
   .dxColumn {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
   }
