@@ -1,15 +1,19 @@
 import navbar from "./navbar.module.scss";
 import { navBarLinks } from "../../constants/navbar";
+import Licomponent from "../licomponent/Licomponent";
 import React from "react";
 
-function Navbar() {
+function Navbar({ setRoute }) {
   return (
     <ul className={navbar.main}>
       {navBarLinks.map((item, index) => (
-        <li className={navbar.listItem} key={item.id}>
-          <div className={navbar.icon}>{item.icon}</div>
-          <div className={navbar.label}>{item.label}</div>
-        </li>
+        <Licomponent
+          routeUrl={item.route}
+          setRoute={setRoute}
+          icon={item.icon}
+          label={item.label}
+          key={item.id}
+        />
       ))}
     </ul>
   );

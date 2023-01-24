@@ -9,13 +9,4 @@
   list-style: none;
   gap: 20px;
   padding: 10px;
-  .listItem {
-    &:hover {
-      background-color: cornflowerblue;
-      width: 200px;
-    }
-  }
-  .label {
-    font-size: 20px;
-  }
 }

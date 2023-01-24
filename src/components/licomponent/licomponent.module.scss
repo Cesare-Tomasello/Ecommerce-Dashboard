@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  width: 150px;
+  height: 30px;
+  gap: 10px;
+  padding-left: 10px;
+  @media all and (max-width: 768px) {
+    width: 40px;
+  }
+  cursor: pointer;
+  &:hover {
+    color: #fa6382;
+    transition: all 0.2s;
+  }
+  &:hover svg path {
+    stroke: #fa6382;
+    transition: all 0.2s;
+  }
+  .icon {
+    font-size: 20px;
+  }
+
+  .label {
+    @media all and (max-width: 768px) {
+      font-size: 0px;
+    }
+  }
+}
