@@ -10,28 +10,39 @@ function Categories() {
 
   const [list, setList] = useState(listObject);
 
-  useEffect(() => {
+  const getData = () => {
     GET("categories").then((data) =>
       setList({ loading: false, categories: data })
     );
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
     <div className={categories.main}>
       <h1 className={categories.title}>CATEGORIES</h1>
-      {/* {listObject.loading ? "loading..." : "caricato"} */}
-      <div className={categories.container}>
-        {list.categories.map((item) => (
-          <div className={categories.card} key={item.id}>
-            <h3 className={categories.name}>{item.name}</h3>
-            <img
-              className={categories.image}
-              src={item.image}
-              alt={item.name}
-            />
-          </div>
-        ))}
-      </div>
+      <form>
+        <input />
+        <input />
+      </form>
+      {list.loading ? (
+        <h1>loading...</h1>
+      ) : (
+        <div className={categories.container}>
+          {list.categories.map((item) => (
+            <div className={categories.card} key={item.id}>
+              <h3 className={categories.name}>{item.name}</h3>
+              <img
+                className={categories.image}
+                src={item.image}
+                alt={item.name}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

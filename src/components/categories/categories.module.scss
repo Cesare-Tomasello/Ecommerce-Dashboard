@@ -16,12 +16,12 @@
     .image {
       @media all and (max-width: 821px) {
         max-width: 90%;
-        max-height: 185px;
+        height: 185px;
         object-fit: cover;
         object-position: top;
       }
       width: 600px;
-      max-height: 500px;
+      height: 500px;
       object-fit: cover;
       object-position: top;
     }
