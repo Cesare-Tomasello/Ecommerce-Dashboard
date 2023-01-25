@@ -19,7 +19,7 @@ function Categories() {
   return (
     <div className={categories.main}>
       <h1 className={categories.title}>CATEGORIES</h1>
-      {listObject.loading ? "loading..." : "caricato"}
+      {/* {listObject.loading ? "loading..." : "caricato"} */}
       <div className={categories.container}>
         {list.categories.map((item) => (
           <div className={categories.card} key={item.id}>
