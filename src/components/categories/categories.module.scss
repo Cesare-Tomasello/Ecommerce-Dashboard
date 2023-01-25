@@ -8,6 +8,54 @@
   width: 100%;
   text-align: center;
   overflow-y: scroll;
+  .openBtn {
+    margin-top: 10px;
+    width: 30vw;
+    max-width: 200px;
+    height: 5vh;
+    max-height: 40px;
+    padding: 5px;
+    border: none;
+    background-color: #fa6382;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    .modalForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      gap: 10px;
+      .formInput {
+        padding: 10px;
+        width: 60vw;
+        max-width: 400px;
+        height: 5vh;
+        max-height: 40px;
+        font-weight: bold;
+      }
+      .closeBtn {
+        width: 30vw;
+        max-width: 200px;
+        height: 5vh;
+        max-height: 40px;
+        padding: 5px;
+        border: none;
+        background-color: #fa6382;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+    }
+  }
   .title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }

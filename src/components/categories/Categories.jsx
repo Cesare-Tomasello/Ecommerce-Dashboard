@@ -2,6 +2,8 @@ import categories from "./categories.module.scss";
 import React, { useEffect, useState } from "react";
 import { GET } from "../libs/HTTPS";
 
+// DA AGGIUNGERE POST/DELETE
+
 function Categories() {
   const listObject = {
     categories: [],
@@ -9,6 +11,7 @@ function Categories() {
   };
 
   const [list, setList] = useState(listObject);
+  const [showModal, setShowModal] = useState(false);
 
   const getData = () => {
     GET("categories").then((data) =>
@@ -23,10 +26,36 @@ function Categories() {
   return (
     <div className={categories.main}>
       <h1 className={categories.title}>CATEGORIES</h1>
-      <form>
-        <input />
-        <input />
-      </form>
+      <button
+        className={categories.openBtn}
+        disabled={showModal ? true : false}
+        onClick={() => setShowModal(true)}
+      >
+        Open Modal
+      </button>
+      {showModal && (
+        <div className={categories.overlay}>
+          <form className={categories.modalForm}>
+            <input
+              className={categories.formInput}
+              type="text"
+              placeholder="Category"
+            />
+            <input
+              className={categories.formInput}
+              type="text"
+              placeholder="Image Url"
+            />
+            <button
+              className={categories.closeBtn}
+              onClick={() => setShowModal(false)}
+            >
+              Close Modal
+            </button>
+          </form>
+        </div>
+      )}
+
       {list.loading ? (
         <h1>loading...</h1>
       ) : (
