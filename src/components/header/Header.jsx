@@ -6,7 +6,9 @@ function Header() {
   return (
     <div className={header.main}>
       <h1 className={header.logo}>E-Commerce Dashboard</h1>
-      <button className={header.headerBtn}></button>
+      <button className={header.headerBtn} disabled>
+        Button
+      </button>
     </div>
   );
 }
