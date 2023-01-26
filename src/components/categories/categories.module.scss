@@ -8,6 +8,18 @@
   width: 100%;
   text-align: center;
   overflow-y: scroll;
+  .addBtn {
+    width: 30vw;
+    max-width: 200px;
+    height: 5vh;
+    max-height: 40px;
+    padding: 5px;
+    border: none;
+    background-color: #fa6382;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
   .openBtn {
     margin-top: 10px;
     width: 30vw;
@@ -19,6 +31,7 @@
     background-color: #fa6382;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
   }
   .overlay {
     height: 100vh;
@@ -53,6 +66,7 @@
         background-color: #fa6382;
         border-radius: 10px;
         font-weight: bold;
+        cursor: pointer;
       }
     }
   }
@@ -60,18 +74,34 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 30px 0;
-    .image {
-      @media all and (max-width: 821px) {
-        max-width: 90%;
-        height: 185px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      .image {
+        @media all and (max-width: 821px) {
+          max-width: 90%;
+          height: 50vh;
+          object-fit: cover;
+          object-position: top;
+        }
+        width: 600px;
+        height: 500px;
         object-fit: cover;
         object-position: top;
+        box-shadow: 0 0 10px black;
       }
-      width: 600px;
-      height: 500px;
-      object-fit: cover;
-      object-position: top;
+      .deleteBtn {
+        padding: 1px 6px;
+        background-color: azure;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     }
   }
 }

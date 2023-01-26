@@ -1,14 +1,20 @@
 import categories from "./categories.module.scss";
 import React, { useEffect, useState } from "react";
-import { GET } from "../libs/HTTPS";
+import { GET, POST, DELETE } from "../libs/HTTPS";
+import { ImBin } from "react-icons/im";
 
-// DA AGGIUNGERE POST/DELETE
+// DA AGGIUNGERE LA PUT
 
 function Categories() {
   const listObject = {
     categories: [],
     loading: true,
   };
+
+  const [form, setForm] = useState({
+    name: "",
+    image: "",
+  });
 
   const [list, setList] = useState(listObject);
   const [showModal, setShowModal] = useState(false);
@@ -17,6 +23,31 @@ function Categories() {
     GET("categories").then((data) =>
       setList({ loading: false, categories: data })
     );
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    POST("categories", form).then((data) => {
+      console.log(data);
+      if (data.status === 201) {
+        setShowModal(false);
+        getData();
+      }
+    });
+  };
+
+  const deleteElement = (id) => {
+    DELETE("categories", +id).then((data) => {
+      console.log(data);
+      getData();
+    });
+  };
+
+  const handleForm = (input, e) => {
+    setForm({
+      ...form,
+      [input]: e.target.value,
+    });
   };
 
   useEffect(() => {
@@ -35,17 +66,23 @@ function Categories() {
       </button>
       {showModal && (
         <div className={categories.overlay}>
-          <form className={categories.modalForm}>
+          <form
+            onSubmit={(e) => submitForm(e)}
+            className={categories.modalForm}
+          >
             <input
+              onChange={(e) => handleForm("name", e)}
               className={categories.formInput}
               type="text"
               placeholder="Category"
             />
             <input
+              onChange={(e) => handleForm("image", e)}
               className={categories.formInput}
               type="text"
               placeholder="Image Url"
             />
+            <button className={categories.addBtn}>Add</button>
             <button
               className={categories.closeBtn}
               onClick={() => setShowModal(false)}
@@ -68,6 +105,12 @@ function Categories() {
                 src={item.image}
                 alt={item.name}
               />
+              <button
+                className={categories.deleteBtn}
+                onClick={() => deleteElement(item.id)}
+              >
+                <ImBin />
+              </button>
             </div>
           ))}
         </div>
