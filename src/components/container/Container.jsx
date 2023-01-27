@@ -16,7 +16,7 @@ function Container() {
         <Navbar setRoute={setRoute} />
       </div>
       <div className={container.dxColumn}>
-        {route === "home" && <Home />}
+        {route === "home" && <Home setRoute={setRoute} />}
         {route === "categories" && <Categories />}
         {route === "products" && <Products />}
         {route === "orders" && <Orders />}
